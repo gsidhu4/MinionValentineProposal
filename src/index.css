@@ -1,4 +1,3 @@
-/* General Styles */
 body {
   margin: 0;
   padding: 0;
@@ -27,13 +26,13 @@ body {
 .AppWrapper {
   position: relative;
   width: 100%;
-  height: 100vh; /* Full screen height */
+  height: 100vh; 
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Hide any overflow from confetti */
+  overflow: hidden; 
 }
-/* Container for centering elements */
+
 .App {
   text-align: center;
   position: relative;
@@ -41,18 +40,20 @@ body {
   padding: 20px;
   box-sizing: border-box;
   width: 100%;
-  max-width: 500px; /* Maximum width for better control on large screens */
+  max-width: 500px; 
 }
 
-/* Heart Icon */
+
 .heart {
   margin-top: 20px;
   animation: heartPulse 1.5s ease-in-out infinite;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 200px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 
 @keyframes heartPulse {
   0% {
@@ -73,7 +74,7 @@ body {
 
 }
 
-/* Heading */
+
 h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
@@ -83,21 +84,21 @@ h1 {
   margin-top:100px;
 }
 
-/* Button Styles */
+
 button {
   background-color: #ff69b4;
   color: white;
   border: none;
-  font-size: 1.2rem; /* Slightly smaller for mobile */
-  padding: 12px 24px; /* Adjusted padding for better touch target */
+  font-size: 1.2rem; 
+  padding: 12px 24px; 
   margin: 10px;
   cursor: pointer;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(255, 105, 180, 0.4);
   transition: transform 0.3s ease;
   text-transform: uppercase;
-  width: 100%; /* Button will take up full width */
-  max-width: 300px; /* Max width to prevent it from being too wide */
+  width: 100%; 
+  max-width: 300px; 
 }
 button:hover {
   background-color: #ff4081;
@@ -114,7 +115,6 @@ button:disabled {
 }
 
 
-/* Confetti Styling */
 .react-confetti {
   position: absolute;
   top: 0;
@@ -125,23 +125,23 @@ button:disabled {
   z-index: 0;
 }
 
-/* Message Styles */
+
 h2 {
-  font-size: 1.8rem; /* Slightly smaller for better readability on mobile */
+  font-size: 1.8rem; 
   margin-top: 20px;
   color: rgb(228, 87, 129);
 }
 
 h3 {
-  font-size: 1.2rem; /* Adjusted size for better readability */
+  font-size: 1.2rem; 
   color: #fff;
   font-style: italic;
 }
 
-/* Media Queries for Mobile */
+
 @media (max-width: 768px) {
   h1 {
-    font-size: 2rem; /* Smaller font size for smaller screens */
+    font-size: 2rem; 
   }
 
   .heart {
@@ -153,8 +153,8 @@ h3 {
   }
 
   button {
-    font-size: 1rem; /* Adjust button font size for mobile */
-    padding: 10px 20px; /* Adjust padding for smaller screens */
+    font-size: 1rem; 
+    padding: 10px 20px; 
   }
 
   h2 {
@@ -166,26 +166,26 @@ h3 {
   }
 }
 
-/* Media Query for Very Small Screens */
+
 @media (max-width: 480px) {
   .App {
-    padding: 10px; /* Less padding on small screens */
+    padding: 10px;
   }
 
   h1 {
-    font-size: 1.8rem; /* Even smaller font size */
+    font-size: 1.8rem; 
   }
 
   button {
-    font-size: 0.9rem; /* Smaller text for smaller buttons */
-    padding: 8px 16px; /* Smaller padding for compact view */
+    font-size: 0.9rem; 
+    padding: 8px 16px; 
   }
 
   h2 {
-    font-size: 1.4rem; /* Reduced font size */
+    font-size: 1.4rem; 
   }
 
   h3 {
-    font-size: 0.9rem; /* Reduced font size */
+    font-size: 0.9rem;
   }
 }

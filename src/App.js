@@ -1,11 +1,13 @@
 import './App.css';
 import { useSpring, animated } from 'react-spring';
 import { FaHeart } from 'react-icons/fa';
-import { useState } from 'react';
+import { useState,useEffect,useRef } from 'react';
 import Confetti from 'react-confetti';
 import audioFile from './diljit.mp3';
 import bearhug from './bearhug.gif';
 import dogsideeye from './dogsideeye.jpg';
+import audioFile2 from './side-eye.mp3';
+
 
 
 function App() {
@@ -16,7 +18,7 @@ function App() {
   const [yesClicked, setYesClicked] = useState(false); 
   const [noClicked, setNoClicked] = useState(false);
 
-  // Animation for shrinking the h1 tag when Yes is clicked
+
   const h1Scale = useSpring({
     to: { transform: yesClicked ? 'scale(0.8)' : 'scale(1)' }, 
     from: { transform: 'scale(1)' },
@@ -28,11 +30,9 @@ function App() {
     setMessage('Yayyyyyyy!!! 😍😘😘😘');
     setShowConfetti(true);
 
-    // Play audio when Yes is clicked
-    const audio = new Audio(audioFile); // Replace with your own audio URL
+    const audio = new Audio(audioFile); 
     audio.play();
 
-    // Disable "No" button
     setYesClicked(true);
     setNoClicked(false);
     setRandomMessage('');
@@ -41,22 +41,24 @@ function App() {
   // Handle click on "No"
   const handleNoClick = () => {
     const randomStatements = [
-      'Are you sure? 😕',
+      '👀',
       'Awwww😢',
-      'I thought we had something special... 😜',
+      'wrong button? 🤔',
       'Don’t leave me hanging... 😢',
     ];
 
-      // Pick a random statement
+    const audio = new Audio(audioFile2);
+    audio.play();
+
       const randomIndex = Math.floor(Math.random() * randomStatements.length);
       setRandomMessage(randomStatements[randomIndex]);
       setNoClicked(true);
   
-      // Make the Yes button grow continuously by adding to its scale
       setButtonScale(prevScale => Math.min(prevScale + 0.1, 3));
     };
     const width = window.innerWidth;
     const height = window.innerHeight;
+
   return (
     <div className="AppWrapper">
       {showConfetti && <Confetti width={width} height={height} />}
@@ -78,7 +80,6 @@ function App() {
       </animated.button>
       {yesClicked && <img src={bearhug} alt="bear hug gif" className="bearhug-gif" />}
       
-      {/* Disable "No" button if "Yes" has been clicked */}
       <button onClick={handleNoClick} disabled={yesClicked}>
         No
       </button>
