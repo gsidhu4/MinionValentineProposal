@@ -1,4 +1,4 @@
-# Valentines 2025 Web App
+# Minion Themed Valentines Proposal
 
 This is a fun, interactive web app where users can answer a Valentine proposal with either "Yes" or "No". The app displays cute animations, confetti, and personalized responses based on the user's choice. It also includes a 3D model for extra flair and dog side-eye images that cycle when the "No" button is clicked.
 
