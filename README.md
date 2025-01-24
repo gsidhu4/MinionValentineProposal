@@ -1,6 +1,8 @@
 # Minion Themed Valentines Proposal
 
-This is a fun, interactive web app where users can answer a Valentine proposal with either "Yes" or "No". The app displays cute animations, confetti, and personalized responses based on the user's choice. It also includes a 3D model for extra flair and dog side-eye images that cycle when the "No" button is clicked.
+This a minion themed valentines proposal.
+
+Check it out here : https://miniontine.netlify.app/
 
 ## Features
 - **Confetti Effect**: Triggered when the user clicks "Yes", with accompanying audio.
