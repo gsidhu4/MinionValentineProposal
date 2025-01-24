@@ -7,7 +7,17 @@ import audioFile from './diljit.mp3';
 import bearhug from './bearhug.gif';
 import dogsideeye from './dogsideeye.jpg';
 import audioFile2 from './side-eye.mp3';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, useGLTF, Html } from '@react-three/drei';
+import { Suspense } from 'react';
+import { useFrame } from '@react-three/fiber';
 
+
+function Model() {
+  const { scene } = useGLTF(process.env.PUBLIC_URL + '/scene.glb');
+
+  return <primitive object={scene} scale={1.4} position={[0, 0, -2]} />;
+}
 
 
 function App() {
@@ -19,11 +29,7 @@ function App() {
   const [noClicked, setNoClicked] = useState(false);
 
 
-  const h1Scale = useSpring({
-    to: { transform: yesClicked ? 'scale(0.8)' : 'scale(1)' }, 
-    from: { transform: 'scale(1)' },
-    reset: true
-  });
+
 
   // Handle click on "Yes"
   const handleYesClick = () => {
@@ -45,6 +51,7 @@ function App() {
       'Awwww😢',
       'wrong button? 🤔',
       'Don’t leave me hanging... 😢',
+      'papoy?'
     ];
 
     const audio = new Audio(audioFile2);
@@ -63,11 +70,10 @@ function App() {
     <div className="AppWrapper">
       {showConfetti && <Confetti width={width} height={height} />}
     <div className="App">
-    <animated.h1 style={h1Scale}>
+    <animated.h1>
           Will you be my Valentine Anoop?
         </animated.h1>
       <FaHeart className="heart" color="red" size={60} />
-    
 
       <animated.button
         className="yesButton"
@@ -80,10 +86,29 @@ function App() {
       </animated.button>
       {yesClicked && <img src={bearhug} alt="bear hug gif" className="bearhug-gif" />}
       
-      <button onClick={handleNoClick} disabled={yesClicked}>
+      <button className="noButton" onClick={handleNoClick} disabled={yesClicked}>
         No
       </button>
       {noClicked && <img src={dogsideeye} alt="dogsideeyepic" className="dogsideeye" />}
+
+
+  <div className="modelContainer"> 
+    <Canvas style={{ width: '350px', height: '300px'}}>
+      <Suspense fallback={<Html>Loading...</Html>}>
+        <ambientLight intensity={0.9} />
+        <directionalLight position={[10, 10, 5]} />
+        <Model />
+        <OrbitControls 
+              enableZoom={false} 
+              autoRotate 
+              autoRotateSpeed={2.0} 
+              maxPolarAngle={Math.PI / 2} 
+              minDistance={5} 
+              maxDistance={10} 
+            />
+      </Suspense>
+    </Canvas>
+  </div>
 
       {message && <h2>{message}</h2>}
       {randomMessage && <h3>{randomMessage}</h3>}
