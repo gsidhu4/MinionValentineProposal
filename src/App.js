@@ -6,6 +6,8 @@ import Confetti from 'react-confetti';
 import audioFile from './minion.mp3';
 import minionhug from './minionhug.gif';
 import dogsideeye from './dogsideeye.jpg';
+import dogsideeye2 from './dogsideeye2.jpg';
+import dogsideeye3 from './dogsideeye3.jpg';
 import audioFile2 from './side-eye.mp3';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useGLTF, Html } from '@react-three/drei';
@@ -28,7 +30,10 @@ function App() {
   const [randomMessage, setRandomMessage] = useState('');
   const [yesClicked, setYesClicked] = useState(false); 
   const [noClicked, setNoClicked] = useState(false);
+  const [dogImage, setDogImage] = useState(dogsideeye); 
 
+
+  const dogImages = [dogsideeye, dogsideeye2, dogsideeye3];
 
 
 
@@ -60,8 +65,11 @@ function App() {
 
       const randomIndex = Math.floor(Math.random() * randomStatements.length);
       setRandomMessage(randomStatements[randomIndex]);
+
+      const randomDogIndex = Math.floor(Math.random() * dogImages.length);
+      setDogImage(dogImages[randomDogIndex]);
+
       setNoClicked(true);
-  
       setButtonScale(prevScale => Math.min(prevScale + 0.1, 5));
     };
     const width = window.innerWidth;
@@ -95,7 +103,7 @@ function App() {
       <button className="noButton" onClick={handleNoClick} disabled={yesClicked}>
         No
       </button>
-      {noClicked && <img src={dogsideeye} alt="dogsideeyepic" className="dogsideeye" />}
+      {noClicked && <img src={dogImage} alt="dogsideeyepic" className="dogsideeye" />}
 
 
   <div className="modelContainer"> 
