@@ -1,7 +1,7 @@
 import './App.css';
 import {animated } from 'react-spring';
 import { FaHeart } from 'react-icons/fa';
-import { useState,useEffect,useRef } from 'react';
+import { useState} from 'react';
 import Confetti from 'react-confetti';
 import audioFile from './minion.mp3';
 import minionhug from './minionhug.gif';
