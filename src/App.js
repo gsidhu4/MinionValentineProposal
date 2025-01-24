@@ -1,16 +1,17 @@
 import './App.css';
-import { useSpring, animated } from 'react-spring';
+import {animated } from 'react-spring';
 import { FaHeart } from 'react-icons/fa';
 import { useState,useEffect,useRef } from 'react';
 import Confetti from 'react-confetti';
-import audioFile from './diljit.mp3';
-import bearhug from './bearhug.gif';
+import audioFile from './minion.mp3';
+import minionhug from './minionhug.gif';
 import dogsideeye from './dogsideeye.jpg';
 import audioFile2 from './side-eye.mp3';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useGLTF, Html } from '@react-three/drei';
 import { Suspense } from 'react';
-import { useFrame } from '@react-three/fiber';
+
+
 
 
 function Model() {
@@ -61,7 +62,7 @@ function App() {
       setRandomMessage(randomStatements[randomIndex]);
       setNoClicked(true);
   
-      setButtonScale(prevScale => Math.min(prevScale + 0.1, 3));
+      setButtonScale(prevScale => Math.min(prevScale + 0.1, 5));
     };
     const width = window.innerWidth;
     const height = window.innerHeight;
@@ -69,6 +70,11 @@ function App() {
   return (
     <div className="AppWrapper">
       {showConfetti && <Confetti width={width} height={height} />}
+      <div className="socials">
+          <a href="https://www.gurbachansidhu.com" target="_blank" rel="noopener noreferrer">
+            Created by Gurbachan Sidhu
+          </a>
+      </div>
     <div className="App">
     <animated.h1>
           Will you be my Valentine Anoop?
@@ -79,12 +85,12 @@ function App() {
         className="yesButton"
         style={{ transform: `scale(${buttonScale})` }}
         onClick={handleYesClick}
-        img src={bearhug} alt="bearshugginggif"
+        img src={minionhug} alt="minionhuggif"
         
       >
         Yes
       </animated.button>
-      {yesClicked && <img src={bearhug} alt="bear hug gif" className="bearhug-gif" />}
+      {yesClicked && <img src={minionhug} alt="minion hug gif" className="minion-hug-gif" />}
       
       <button className="noButton" onClick={handleNoClick} disabled={yesClicked}>
         No
