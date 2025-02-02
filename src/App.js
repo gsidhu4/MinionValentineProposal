@@ -65,7 +65,11 @@ function App() {
 
       const randomIndex = Math.floor(Math.random() * randomStatements.length);
       setRandomMessage(randomStatements[randomIndex]);
-
+      const dogImageElements = document.querySelectorAll('.dogsideeye');
+      dogImageElements.forEach(img => {
+        img.style.width = '200px';
+        img.style.height = '200px';
+      });
       const randomDogIndex = Math.floor(Math.random() * dogImages.length);
       setDogImage(dogImages[randomDogIndex]);
 
