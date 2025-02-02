@@ -80,7 +80,7 @@ function App() {
       {showConfetti && <Confetti width={width} height={height} />}
       <div className="socials">
           <a href="https://www.gurbachansidhu.com" target="_blank" rel="noopener noreferrer">
-            Created by Gurbachan Sidhu
+            Created by Sunny Sidhu
           </a>
       </div>
     <div className="App">
@@ -127,7 +127,7 @@ function App() {
       {message && <h2>{message}</h2>}
       {randomMessage && <h3>{randomMessage}</h3>}
     </div>
-    <div className='footer'> ©  2025 Copyright | Made by your Crush❤️ </div>
+    <div className='footer'> © 2025 Copyright | Made by your Crush❤️ </div>
     </div>
   );
 }
