@@ -85,7 +85,7 @@ function App() {
       </div>
     <div className="App">
     <animated.h1>
-          Will you be my Valentine Anoop?
+          Will you be my Valentine ?
         </animated.h1>
       <FaHeart className="heart" color="red" size={60} />
 
@@ -127,6 +127,7 @@ function App() {
       {message && <h2>{message}</h2>}
       {randomMessage && <h3>{randomMessage}</h3>}
     </div>
+    <div className='footer'> ©  2025 Copyright | Made by your Crush❤️ </div>
     </div>
   );
 }
